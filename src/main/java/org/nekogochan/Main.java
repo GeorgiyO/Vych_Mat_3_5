@@ -8,17 +8,17 @@ import java.util.ArrayList;
 
 public class Main {
 
-    private static final double H = 0.1;
-
     public static void main(String[] args) {
         double a = 0;
         double b = Math.PI;
+        double h = 0.75;
+        double xi = 1.35;
 
         TableCalculator tableCalculator = new TableCalculator();
-        tableCalculator.setH(H).setFoo((x) -> Math.sin(2*x - Math.PI/3));
+        tableCalculator.setH(h).setFoo((x) -> Math.sin(2*x - Math.PI/3));
 
         ArrayList<Point> points = tableCalculator.getTables(a, b);
 
-        System.out.println(LagrangeInterpolation.interpolate(points, 0.4));
+        System.out.printf("result: %.2f",LagrangeInterpolation.interpolate(points, xi));
     }
 }

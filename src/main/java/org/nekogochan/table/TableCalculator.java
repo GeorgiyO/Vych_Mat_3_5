@@ -3,15 +3,11 @@ package org.nekogochan.table;
 import org.nekogochan.model.Point;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
 
 public class TableCalculator {
 
     private double h;
     private Function foo;
-    private int count;
 
     private ArrayList<Point> table = new ArrayList<>();
 
@@ -28,10 +24,11 @@ public class TableCalculator {
     public ArrayList<Point> getTables(double min, double max) {
         double current = min;
         while (current < max) {
-            table.add(new Point(current, foo.getY(current)));
+            Point p = new Point(current, foo.getY(current));
+            System.out.println(p);
+            table.add(p);
             current += h;
         }
         return table;
     }
-
 }

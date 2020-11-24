@@ -15,6 +15,7 @@ public class LagrangeInterpolation {
                 if (j != i)
                     term = term * (xi - points.get(j).x) / (points.get(i).x - points.get(j).x);
             }
+            System.out.printf("x: %.2f; y: %.2f; m: %.2f\n", term / points.get(i).y, points.get(i).y, term);
             result += term;
         }
         return result;
