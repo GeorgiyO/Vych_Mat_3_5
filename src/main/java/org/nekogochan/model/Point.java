@@ -1,5 +1,8 @@
 package org.nekogochan.model;
 
+/**
+ * Вспомогтальная структура, описывающая точку x,y
+ */
 public class Point {
 
     public double x;
